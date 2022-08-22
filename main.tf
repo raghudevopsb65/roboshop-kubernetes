@@ -70,3 +70,12 @@ module "RABBITMQ" {
   PRIVATE_ZONE_ID    = var.PRIVATE_ZONE_ID
 }
 
+module "EKS" {
+  source             = "github.com/r-devops/tf-module-eks.git"
+  ENV                = var.ENV
+  PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
+  PUBLIC_SUBNET_IDS  = module.VPC.PUBLIC_SUBNET_IDS
+  DESIRED_SIZE       = 2
+  MAX_SIZE           = 4
+  MIN_SIZE           = 2
+}
