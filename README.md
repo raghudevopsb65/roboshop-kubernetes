@@ -1,1 +1,2 @@
-# roboshop-kubernetes
+Grafana Default Password :
+admin / prom-operator 
